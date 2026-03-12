@@ -158,22 +158,7 @@
             <div class="column is-four-fifths">
                 <h2 class="title is-3">Introduction</h2>
                 <div class="content has-text-justified">
-                    Recent progress in multimodal large language models has markedly enhanced the understanding of short
-                    videos (typically under one minute), and several evaluation datasets have emerged accordingly.
-                    However, these advancements fall short of meeting the demands of real-world applications such as
-                    embodied intelligence for long-term decision-making, in-depth movie reviews and discussions, and
-                    live sports commentary, all of which require comprehension of long videos spanning several hours. To
-                    address this gap, we introduce LVBench, a benchmark specifically designed for long video
-                    understanding. Our dataset comprises publicly sourced videos, including TV series, sports
-                    broadcasts, and everyday surveillance footage, and encompasses a diverse set of tasks aimed at long
-                    video comprehension and information extraction. By leveraging a combination of manual annotations
-                    and model-assisted techniques, we have created a robust video understanding question-answer dataset.
-                    LVBench is designed to challenge multimodal models to demonstrate long-term memory and extended
-                    comprehension capabilities. Our extensive evaluations of various baseline models reveal that current
-                    multimodal large language models still underperform on these demanding long video understanding
-                    tasks. Through LVBench, we aim to spur the development of more advanced models capable of tackling
-                    the
-                    complexities of long video comprehension.
+                    Current benchmarks for graphical user interface (GUI) agents predominantly rely on static screenshots. However, real-world smartphone interaction routinely requires agents to process transient audio cues and temporal video dynamics that are tightly coupled with the moment of action. To bridge this gap, we introduce OmniGUI, the first step-level benchmark designed to evaluate GUI agents in omni-modal smartphone environments. OmniGUI provides continuous, interleaved multimodal inputs-comprising static images, synchronous audio, and video clips—at every action step. The dataset encompasses 706 expert-demonstrated episodes (2,616 action steps) across 29 applications, systematically annotated with objective multimodal dependency levels. Because dedicated omni-modal GUI agent frameworks are currently in their nascent stage, we select foundational omni-modal models capable of natively processing interleaved inputs to serve as agent proxies for our initial baselines. Our empirical evaluation reveals that while current models exhibit competency on visually static tasks, their action prediction performance degrades significantly in environments requiring synchronous temporal and auditory signals. Furthermore, ablation studies isolate specific operational bottlenecks, notably cross-modal interference when processing task-irrelevant environmental noise. 
                 </div>
             </div>
         </div>
