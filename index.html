@@ -34,61 +34,6 @@
             pointer-events: none;
             background-image: none !important; /* Remove the sort arrow */
         }
-
-        .publication-authors {
-            width: 85%;
-            margin: 0 auto 16px;
-            line-height: 1.45;
-        }
-
-        .publication-authors .author-line {
-            font-size: 1.9rem;
-            color: #2b86ea;
-            font-weight: 500;
-        }
-
-        .publication-authors .author-line sup,
-        .publication-authors .affiliation-line sup {
-            color: #7cc35c;
-            font-size: 0.72em;
-            vertical-align: super;
-        }
-
-        .publication-authors .footnote-line sup {
-            font-size: 0.78em;
-            vertical-align: super;
-        }
-
-        .publication-authors .affiliation-line {
-            font-size: 1.2rem;
-            color: #363636;
-            margin-top: 0.35rem;
-        }
-
-        .publication-authors .footnote-line {
-            font-size: 1rem;
-            color: #4a4a4a;
-            margin-top: 0.2rem;
-        }
-
-        @media screen and (max-width: 768px) {
-            .publication-authors {
-                width: 100%;
-                margin-bottom: 14px;
-            }
-
-            .publication-authors .author-line {
-                font-size: 1.25rem;
-            }
-
-            .publication-authors .affiliation-line {
-                font-size: 1rem;
-            }
-
-            .publication-authors .footnote-line {
-                font-size: 0.9rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -132,27 +77,28 @@
                         <span class="video-mme" style="vertical-align: middle">OmniGUI</span>
                     </h1>
                     <h2 class="subtitle is-3 publication-subtitle" , style="margin-bottom: 20px; margin-top: 20px;">
-                        OmniGUI: Benchmarking GUI Agents in<br>Omni-Modal Smartphone Environments
+                        A Step-Level GUI Agent Benchmark<br> in Omni-Modal Smartphone Environments
                     </h2>
 
-                    <div class="publication-authors">
-                        <div class="author-line">
-                            Felix Henry<sup>*1</sup>, Xiaochen Lin<sup>*1</sup>, Jiangyou Zhu<sup>1</sup>, Yangfan<sup>1</sup>,
-                            Bingqian Zhang<sup>1</sup>, Min Chen<sup>1</sup>, and <a href="https://huangshiyu13.github.io/">Shiyu Huang</a><sup>&dagger;1</sup>
-                        </div>
-                        <div class="affiliation-line">
-                            <sup>1</sup>XPeng Motors
-                        </div>
-                        <div class="footnote-line">
-                            <sup>*</sup>Equal contribution. <sup>&dagger;</sup>Corresponding author.
-                        </div>
+                    <!-- <div class="is-size-5 publication-authors" , style="width: 80%; margin: 20px auto;" ,>
+
+                        <span class="author-block" , style="font-size:24px"><a href="https://github.com/THUDM/LVBench">LVBench Team</a></span>
+
                     </div>
+
+                    <div class="is-size-5 publication-authors">
+
+                    </div> -->
+                    
+                    <!-- <div class="is-size-5 publication-authors" style="width: 80%; margin: 20px auto; visibility: hidden;">
+                        <span class="author-block" style="font-size:24px">LVBench Team</span>
+                    </div> -->
 
                     <div class="column has-text-centered">
                         <div class="publication-links">
                             <!-- PDF Link. -->
                             <span class="link-block">
-                <a href="https://arxiv.org/abs/2605.18758"
+                <a href="https://arxiv.org/abs/2406.08035"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -170,7 +116,17 @@
                   <span>Code</span>
                   </a>
               </span>
-                           
+                            <!-- Dataset Link. -->
+                            <span class="link-block">
+                <a href="https://huggingface.co/datasets/XIAOCHENLIN00zz/OmniGUI"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">📊</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
                             <!-- Leaderboard Link. -->
                             <span class="link-block">
                 <!-- <a href="#leaderboard"
@@ -180,7 +136,7 @@
                   </span>
                   <span>Leaderboard</span>
                 </a> -->
-                                <a href="https://huggingface.co/datasets/OmniGUI/OmniGUI"
+                                <a href="https://huggingface.co/datasets/XIAOCHENLIN00zz/OmniGUI"
                                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <!-- <p style="font-size:18px">🤗</p> -->
@@ -209,7 +165,7 @@
             <div class="column is-four-fifths">
                 <h2 class="title is-3">Introduction</h2>
                 <div class="content has-text-justified">
-                    Current benchmarks for graphical user interface (GUI) agents predominantly rely on static screenshots. However, real-world smartphone interaction routinely requires agents to process transient audio cues and temporal video dynamics that are tightly coupled with the moment of action. To bridge this gap, we introduce OmniGUI, the first step-level benchmark designed to evaluate GUI agents in omni-modal smartphone environments. OmniGUI provides continuous, interleaved multimodal inputs-comprising static images, synchronous audio, and video clips—at every action step. The dataset encompasses 709 expert-demonstrated episodes (2,579 action steps) across 29 applications, systematically annotated with objective multimodal dependency levels. Because dedicated omni-modal GUI agent frameworks are currently in their nascent stage, we select foundational omni-modal models capable of natively processing interleaved inputs to serve as agent proxies for our initial baselines. Our empirical evaluation reveals that while current models exhibit competency on visually static tasks, their action prediction performance degrades significantly in environments requiring synchronous temporal and auditory signals. Furthermore, ablation studies isolate specific operational bottlenecks, notably cross-modal interference when processing task-irrelevant environmental noise. 
+                    Current benchmarks for graphical user interface (GUI) agents predominantly rely on static screenshots. However, real-world smartphone interaction routinely requires agents to process transient audio cues and temporal video dynamics that are tightly coupled with the moment of action. To bridge this gap, we introduce OmniGUI, the first step-level benchmark designed to evaluate GUI agents in omni-modal smartphone environments. OmniGUI provides continuous, interleaved multimodal inputs-comprising static images, synchronous audio, and video clips—at every action step. The dataset encompasses 708 expert-demonstrated episodes (2,572 action steps) across 29 applications, systematically annotated with objective multimodal dependency levels. Because dedicated omni-modal GUI agent frameworks are currently in their nascent stage, we select foundational omni-modal models capable of natively processing interleaved inputs to serve as agent proxies for our initial baselines. Our empirical evaluation reveals that while current models exhibit competency on visually static tasks, their action prediction performance degrades significantly in environments requiring synchronous temporal and auditory signals. Furthermore, ablation studies isolate specific operational bottlenecks, notably cross-modal interference when processing task-irrelevant environmental noise. 
                 </div>
             </div>
         </div>
@@ -250,85 +206,85 @@
                             <tbody style="color: #000;">
                                 <tr>
                                     <td style="color: #000;">1</td><td style="text-align: left; color: #000;"><b>Gemini 3.1 Pro</b></td>
-                                    <td style="color: #000;">88.1</td><td style="color: #000;">78.6</td><td style="color: #000;">58.3</td><td style="color: #000;">66.5</td>
-                                    <td style="color: #000;">80.2</td><td style="color: #000;">62.9</td><td style="color: #000;">31.9</td><td style="color: #000;">41.8</td>
-                                    <td style="color: #000;">81.3</td><td style="color: #000;">64.1</td><td style="color: #000;">39.1</td><td style="color: #000;">46.6</td>
-                                    <td style="color: #000;">82.9</td><td style="color: #000;">62.3</td><td style="color: #000;">24.7</td><td style="color: #000;">36.6</td>
-                                    <td style="color: #000;">85.4</td><td style="color: #000;">65.1</td><td style="color: #000;">32.0</td><td style="color: #000;">40.5</td>
-                                    <td style="color: #000;"><b>83.6</b></td><td style="color: #000;"><b>66.6</b></td><td style="color: #000;"><b>37.2</b></td><td style="color: #000;"><b>46.4</b></td>
+                                    <td style="color: #000;">87.9</td><td style="color: #000;">77.8</td><td style="color: #000;">57.9</td><td style="color: #000;">66.2</td>
+                                    <td style="color: #000;">80.0</td><td style="color: #000;">61.9</td><td style="color: #000;">31.4</td><td style="color: #000;">41.4</td>
+                                    <td style="color: #000;">81.1</td><td style="color: #000;">63.0</td><td style="color: #000;">38.3</td><td style="color: #000;">46.1</td>
+                                    <td style="color: #000;">82.9</td><td style="color: #000;">61.8</td><td style="color: #000;">24.4</td><td style="color: #000;">36.4</td>
+                                    <td style="color: #000;">85.7</td><td style="color: #000;">64.8</td><td style="color: #000;">31.8</td><td style="color: #000;">40.3</td>
+                                    <td style="color: #000;"><b>83.3</b></td><td style="color: #000;"><b>65.4</b></td><td style="color: #000;"><b>36.7</b></td><td style="color: #000;"><b>46.1</b></td>
                                 </tr>
                                 <tr>
                                     <td style="color: #000;">2</td><td style="text-align: left; color: #000;">Gemini 3.0 Pro</td>
-                                    <td style="color: #000;">88.9</td><td style="color: #000;">79.9</td><td style="color: #000;">55.9</td><td style="color: #000;">62.6</td>
-                                    <td style="color: #000;">79.6</td><td style="color: #000;">67.0</td><td style="color: #000;">31.2</td><td style="color: #000;">41.7</td>
-                                    <td style="color: #000;">75.0</td><td style="color: #000;">59.9</td><td style="color: #000;">28.3</td><td style="color: #000;">39.5</td>
-                                    <td style="color: #000;">78.3</td><td style="color: #000;">61.8</td><td style="color: #000;">22.9</td><td style="color: #000;">36.3</td>
-                                    <td style="color: #000;">81.9</td><td style="color: #000;">63.3</td><td style="color: #000;">27.3</td><td style="color: #000;">35.8</td>
-                                    <td style="color: #000;">80.7</td><td style="color: #000;">66.4</td><td style="color: #000;">33.1</td><td style="color: #000;">43.3</td>
+                                    <td style="color: #000;">86.3</td><td style="color: #000;">76.2</td><td style="color: #000;">55.9</td><td style="color: #000;">62.6</td>
+                                    <td style="color: #000;">77.4</td><td style="color: #000;">61.1</td><td style="color: #000;">31.4</td><td style="color: #000;">42.0</td>
+                                    <td style="color: #000;">76.8</td><td style="color: #000;">59.3</td><td style="color: #000;">29.8</td><td style="color: #000;">41.2</td>
+                                    <td style="color: #000;">79.1</td><td style="color: #000;">60.7</td><td style="color: #000;">23.1</td><td style="color: #000;">36.2</td>
+                                    <td style="color: #000;">81.4</td><td style="color: #000;">63.1</td><td style="color: #000;">27.1</td><td style="color: #000;">35.7</td>
+                                    <td style="color: #000;">80.0</td><td style="color: #000;">63.7</td><td style="color: #000;">33.5</td><td style="color: #000;">43.6</td>
                                 </tr>
                                 <tr>
                                     <td style="color: #000;">3</td><td style="text-align: left; color: #000;">Gemini 3.0 Flash</td>
-                                    <td style="color: #000;">86.8</td><td style="color: #000;">79.7</td><td style="color: #000;">53.1</td><td style="color: #000;">63.1</td>
-                                    <td style="color: #000;">76.3</td><td style="color: #000;">63.4</td><td style="color: #000;">25.4</td><td style="color: #000;">40.8</td>
-                                    <td style="color: #000;">71.1</td><td style="color: #000;">56.6</td><td style="color: #000;">22.5</td><td style="color: #000;">37.1</td>
-                                    <td style="color: #000;">77.3</td><td style="color: #000;">60.2</td><td style="color: #000;">25.5</td><td style="color: #000;">38.3</td>
-                                    <td style="color: #000;">79.3</td><td style="color: #000;">58.7</td><td style="color: #000;">23.4</td><td style="color: #000;">34.9</td>
-                                    <td style="color: #000;">78.2</td><td style="color: #000;">63.9</td><td style="color: #000;">30.2</td><td style="color: #000;">43.0</td>
+                                    <td style="color: #000;">85.0</td><td style="color: #000;">75.6</td><td style="color: #000;">53.1</td><td style="color: #000;">63.1</td>
+                                    <td style="color: #000;">75.3</td><td style="color: #000;">58.5</td><td style="color: #000;">25.5</td><td style="color: #000;">41.1</td>
+                                    <td style="color: #000;">73.2</td><td style="color: #000;">56.4</td><td style="color: #000;">23.4</td><td style="color: #000;">39.1</td>
+                                    <td style="color: #000;">80.4</td><td style="color: #000;">60.0</td><td style="color: #000;">25.6</td><td style="color: #000;">38.6</td>
+                                    <td style="color: #000;">78.7</td><td style="color: #000;">58.4</td><td style="color: #000;">23.3</td><td style="color: #000;">34.8</td>
+                                    <td style="color: #000;">78.4</td><td style="color: #000;">61.4</td><td style="color: #000;">30.4</td><td style="color: #000;">43.5</td>
                                 </tr>
                                 <tr>
                                     <td style="color: #000;">4</td><td style="text-align: left; color: #000;">Gemini 2.5 Pro</td>
-                                    <td style="color: #000;">87.7</td><td style="color: #000;">62.7</td><td style="color: #000;">31.7</td><td style="color: #000;">41.5</td>
-                                    <td style="color: #000;">72.7</td><td style="color: #000;">42.9</td><td style="color: #000;">10.9</td><td style="color: #000;">21.5</td>
-                                    <td style="color: #000;">68.7</td><td style="color: #000;">41.7</td><td style="color: #000;">12.3</td><td style="color: #000;">24.1</td>
-                                    <td style="color: #000;">71.9</td><td style="color: #000;">45.9</td><td style="color: #000;">10.2</td><td style="color: #000;">22.3</td>
-                                    <td style="color: #000;">76.0</td><td style="color: #000;">42.8</td><td style="color: #000;">11.7</td><td style="color: #000;">20.1</td>
-                                    <td style="color: #000;">75.4</td><td style="color: #000;">47.4</td><td style="color: #000;">15.4</td><td style="color: #000;">26.0</td>
+                                    <td style="color: #000;">86.1</td><td style="color: #000;">58.1</td><td style="color: #000;">31.7</td><td style="color: #000;">41.5</td>
+                                    <td style="color: #000;">72.8</td><td style="color: #000;">37.7</td><td style="color: #000;">11.7</td><td style="color: #000;">22.4</td>
+                                    <td style="color: #000;">70.6</td><td style="color: #000;">39.5</td><td style="color: #000;">12.8</td><td style="color: #000;">24.5</td>
+                                    <td style="color: #000;">73.9</td><td style="color: #000;">44.1</td><td style="color: #000;">10.3</td><td style="color: #000;">22.5</td>
+                                    <td style="color: #000;">77.2</td><td style="color: #000;">43.1</td><td style="color: #000;">11.6</td><td style="color: #000;">20.0</td>
+                                    <td style="color: #000;">75.7</td><td style="color: #000;">44.1</td><td style="color: #000;">15.7</td><td style="color: #000;">26.3</td>
                                 </tr>
                                 <tr>
                                     <td style="color: #000;">5</td><td style="text-align: left; color: #000;">Gemini 2.5 Flash</td>
-                                    <td style="color: #000;">77.8</td><td style="color: #000;">57.0</td><td style="color: #000;">29.0</td><td style="color: #000;">42.6</td>
-                                    <td style="color: #000;">69.3</td><td style="color: #000;">36.9</td><td style="color: #000;">8.0</td><td style="color: #000;">18.1</td>
-                                    <td style="color: #000;">62.7</td><td style="color: #000;">38.0</td><td style="color: #000;">11.6</td><td style="color: #000;">24.6</td>
-                                    <td style="color: #000;">65.2</td><td style="color: #000;">36.2</td><td style="color: #000;">8.9</td><td style="color: #000;">20.8</td>
-                                    <td style="color: #000;">70.9</td><td style="color: #000;">35.0</td><td style="color: #000;">3.9</td><td style="color: #000;">13.9</td>
-                                    <td style="color: #000;">69.1</td><td style="color: #000;">40.7</td><td style="color: #000;">12.5</td><td style="color: #000;">24.2</td>
+                                    <td style="color: #000;">75.1</td><td style="color: #000;">50.9</td><td style="color: #000;">29.0</td><td style="color: #000;">42.6</td>
+                                    <td style="color: #000;">70.4</td><td style="color: #000;">34.3</td><td style="color: #000;">8.0</td><td style="color: #000;">18.2</td>
+                                    <td style="color: #000;">64.8</td><td style="color: #000;">35.6</td><td style="color: #000;">11.3</td><td style="color: #000;">24.9</td>
+                                    <td style="color: #000;">68.0</td><td style="color: #000;">35.1</td><td style="color: #000;">9.0</td><td style="color: #000;">21.1</td>
+                                    <td style="color: #000;">71.2</td><td style="color: #000;">35.4</td><td style="color: #000;">4.7</td><td style="color: #000;">14.8</td>
+                                    <td style="color: #000;">69.7</td><td style="color: #000;">37.8</td><td style="color: #000;">12.6</td><td style="color: #000;">24.6</td>
                                 </tr>
                                 
                                 <tr>
                                     <td style="color: #000;">6</td><td style="text-align: left; color: #000;"><b>Qwen3-Omni</b></td>
-                                    <td style="color: #000;">65.4</td><td style="color: #000;">43.9</td><td style="color: #000;">10.3</td><td style="color: #000;">28.5</td>
-                                    <td style="color: #000;">61.5</td><td style="color: #000;">32.1</td><td style="color: #000;">2.9</td><td style="color: #000;">13.9</td>
-                                    <td style="color: #000;">52.2</td><td style="color: #000;">24.6</td><td style="color: #000;">2.2</td><td style="color: #000;">12.5</td>
-                                    <td style="color: #000;">63.8</td><td style="color: #000;">32.4</td><td style="color: #000;">6.4</td><td style="color: #000;">16.5</td>
-                                    <td style="color: #000;">67.5</td><td style="color: #000;">33.3</td><td style="color: #000;">3.9</td><td style="color: #000;">14.0</td>
-                                    <td style="color: #000;">62.1</td><td style="color: #000;">33.4</td><td style="color: #000;">5.2</td><td style="color: #000;">17.2</td>
+                                    <td style="color: #000;">65.7</td><td style="color: #000;">42.4</td><td style="color: #000;">10.3</td><td style="color: #000;">28.5</td>
+                                    <td style="color: #000;">58.3</td><td style="color: #000;">29.6</td><td style="color: #000;">2.9</td><td style="color: #000;">14.0</td>
+                                    <td style="color: #000;">57.8</td><td style="color: #000;">26.1</td><td style="color: #000;">2.1</td><td style="color: #000;">13.2</td>
+                                    <td style="color: #000;">66.7</td><td style="color: #000;">31.5</td><td style="color: #000;">6.4</td><td style="color: #000;">16.8</td>
+                                    <td style="color: #000;">67.6</td><td style="color: #000;">34.3</td><td style="color: #000;">3.9</td><td style="color: #000;">14.1</td>
+                                    <td style="color: #000;">63.2</td><td style="color: #000;">32.4</td><td style="color: #000;">5.2</td><td style="color: #000;">17.5</td>
                                 </tr>
                                 <tr>
                                     <td style="color: #000;">7</td><td style="text-align: left; color: #000;">VITA-1.5</td>
-                                    <td style="color: #000;">51.1</td><td style="color: #000;">16.5</td><td style="color: #000;">2.8</td><td style="color: #000;">3.9</td>
-                                    <td style="color: #000;">44.3</td><td style="color: #000;">19.0</td><td style="color: #000;">2.2</td><td style="color: #000;">3.2</td>
-                                    <td style="color: #000;">33.9</td><td style="color: #000;">13.4</td><td style="color: #000;">0.0</td><td style="color: #000;">0.0</td>
-                                    <td style="color: #000;">33.5</td><td style="color: #000;">8.1</td><td style="color: #000;">0.6</td><td style="color: #000;">1.9</td>
-                                    <td style="color: #000;">37.2</td><td style="color: #000;">11.8</td><td style="color: #000;">0.0</td><td style="color: #000;">0.8</td>
-                                    <td style="color: #000;">40.0</td><td style="color: #000;">13.7</td><td style="color: #000;">1.1</td><td style="color: #000;">2.2</td>
+                                    <td style="color: #000;">48.4</td><td style="color: #000;">14.8</td><td style="color: #000;">2.8</td><td style="color: #000;">3.9</td>
+                                    <td style="color: #000;">43.4</td><td style="color: #000;">16.4</td><td style="color: #000;">2.2</td><td style="color: #000;">3.2</td>
+                                    <td style="color: #000;">33.5</td><td style="color: #000;">11.7</td><td style="color: #000;">0.0</td><td style="color: #000;">1.0</td>
+                                    <td style="color: #000;">35.9</td><td style="color: #000;">7.7</td><td style="color: #000;">0.6</td><td style="color: #000;">1.9</td>
+                                    <td style="color: #000;">37.1</td><td style="color: #000;">10.9</td><td style="color: #000;">0.0</td><td style="color: #000;">0.8</td>
+                                    <td style="color: #000;">39.4</td><td style="color: #000;">12.1</td><td style="color: #000;">1.1</td><td style="color: #000;">2.2</td>
                                 </tr>
                                 <tr>
                                     <td style="color: #000;">8</td><td style="text-align: left; color: #000;">MiniCPM-o-4.5</td>
-                                    <td style="color: #000;">34.1</td><td style="color: #000;">7.7</td><td style="color: #000;">0.7</td><td style="color: #000;">2.2</td>
-                                    <td style="color: #000;">30.8</td><td style="color: #000;">4.7</td><td style="color: #000;">0.0</td><td style="color: #000;">1.0</td>
-                                    <td style="color: #000;">23.5</td><td style="color: #000;">3.9</td><td style="color: #000;">0.0</td><td style="color: #000;">2.1</td>
-                                    <td style="color: #000;">33.7</td><td style="color: #000;">4.4</td><td style="color: #000;">0.0</td><td style="color: #000;">0.8</td>
-                                    <td style="color: #000;">32.4</td><td style="color: #000;">3.3</td><td style="color: #000;">0.0</td><td style="color: #000;">0.8</td>
-                                    <td style="color: #000;">31.0</td><td style="color: #000;">4.8</td><td style="color: #000;">0.1</td><td style="color: #000;">1.4</td>
+                                    <td style="color: #000;">34.8</td><td style="color: #000;">7.4</td><td style="color: #000;">0.7</td><td style="color: #000;">2.2</td>
+                                    <td style="color: #000;">34.7</td><td style="color: #000;">5.5</td><td style="color: #000;">0.0</td><td style="color: #000;">1.0</td>
+                                    <td style="color: #000;">25.9</td><td style="color: #000;">4.1</td><td style="color: #000;">0.0</td><td style="color: #000;">1.8</td>
+                                    <td style="color: #000;">35.7</td><td style="color: #000;">4.2</td><td style="color: #000;">0.6</td><td style="color: #000;">1.2</td>
+                                    <td style="color: #000;">33.0</td><td style="color: #000;">3.4</td><td style="color: #000;">0.0</td><td style="color: #000;">1.0</td>
+                                    <td style="color: #000;">32.9</td><td style="color: #000;">4.9</td><td style="color: #000;">0.3</td><td style="color: #000;">1.5</td>
                                 </tr>
                                 <tr>
                                     <td style="color: #000;">9</td><td style="text-align: left; color: #000;">Baichuan-Omni-1.5</td>
-                                    <td style="color: #000;">17.6</td><td style="color: #000;">4.7</td><td style="color: #000;">0.0</td><td style="color: #000;">1.0</td>
-                                    <td style="color: #000;">14.7</td><td style="color: #000;">4.0</td><td style="color: #000;">0.0</td><td style="color: #000;">0.5</td>
-                                    <td style="color: #000;">11.5</td><td style="color: #000;">1.0</td><td style="color: #000;">0.0</td><td style="color: #000;">0.0</td>
-                                    <td style="color: #000;">17.2</td><td style="color: #000;">2.8</td><td style="color: #000;">0.0</td><td style="color: #000;">0.0</td>
-                                    <td style="color: #000;">18.0</td><td style="color: #000;">4.0</td><td style="color: #000;">0.0</td><td style="color: #000;">0.2</td>
-                                    <td style="color: #000;">15.8</td><td style="color: #000;">3.3</td><td style="color: #000;">0.0</td><td style="color: #000;">0.4</td>
+                                    <td style="color: #000;">19.5</td><td style="color: #000;">4.9</td><td style="color: #000;">0.0</td><td style="color: #000;">1.0</td>
+                                    <td style="color: #000;">16.2</td><td style="color: #000;">4.0</td><td style="color: #000;">0.0</td><td style="color: #000;">0.5</td>
+                                    <td style="color: #000;">12.6</td><td style="color: #000;">1.4</td><td style="color: #000;">0.0</td><td style="color: #000;">0.0</td>
+                                    <td style="color: #000;">18.9</td><td style="color: #000;">2.4</td><td style="color: #000;">0.0</td><td style="color: #000;">0.2</td>
+                                    <td style="color: #000;">17.9</td><td style="color: #000;">4.1</td><td style="color: #000;">0.0</td><td style="color: #000;">0.5</td>
+                                    <td style="color: #000;">17.0</td><td style="color: #000;">3.3</td><td style="color: #000;">0.0</td><td style="color: #000;">0.4</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -497,7 +453,7 @@
                     <div class="content has-text-centered">
                         <img src="static/images/performance_by_app_v2.png" alt="" width="80%"/>
                         <p style="text-align: left; margin-left: auto; margin-right: auto; width: 80%;">
-                            <strong>Performance of Gemini 3.0 Pro disaggregated by application:</strong> The horizontal bar chart reports the Exact Match (EM), Goal Progress (GP), and Success Rate (SR) metrics, sorted in ascending order by EM from bottom to top. The overall benchmark averages (EM=63.6%, GP=43.6%) are indicated by vertical dotted lines. 
+                            <strong>Performance of Gemini 3.0 Pro disaggregated by application:</strong> The horizontal bar chart reports the Exact Match (EM), Goal Progress (GP), and Success Rate (SR) metrics, sorted in ascending order by EM from bottom to top. The overall benchmark averages (EM=63.7%, GP=43.6%) are indicated by vertical dotted lines. 
                         </p>
                     </div>
                 </div>
@@ -514,20 +470,19 @@
 </section>
 
 
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-    <pre><code>@misc{henry2026omniguibenchmarkingguiagents,
-    title={OmniGUI: Benchmarking GUI Agents in Omni-Modal Smartphone Environments},
-    author={Felix Henry and Xiaochen Lin and Jiangyou Zhu and Yangfan and Bingqian Zhang and Min Chen and Shiyu Huang},
-    year={2026},
-    eprint={2605.18758},
-    archivePrefix={arXiv},
-    primaryClass={cs.HC},
-    url={https://arxiv.org/abs/2605.18758},
-    }
+    <pre><code>@misc{wang2024lvbench,
+      title={LVBench: An Extreme Long Video Understanding Benchmark},
+      author={Weihan Wang and Zehai He and Wenyi Hong and Yean Cheng and Xiaohan Zhang and Ji Qi and Shiyu Huang and Bin Xu and Yuxiao Dong and Ming Ding and Jie Tang},
+      year={2024},
+      eprint={2406.08035},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 </code></pre>
     </div>
-</section>
+</section> -->
 
 <footer class="footer">
     <!-- <div class="container"> -->
@@ -537,7 +492,7 @@
         <div class="column is-8">
             <div class="content">
                 <p style="text-align: center;">
-                    This website is adapted from <a href="https://lvbench.github.io/">LVBench</a>, licensed under a
+                    This website is adapted from <a href="https://video-mme.github.io">Video-MME</a>, licensed under a
                     <a rel="license"
                        href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
                         Commons Attribution-ShareAlike 4.0 International License</a>.
